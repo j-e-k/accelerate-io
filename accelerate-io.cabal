@@ -1,7 +1,7 @@
 Name:                   accelerate-io
-Version:                2.0.0.0
+Version:                2.0.0.1
 Cabal-version:          >= 1.6
-Tested-with:            GHC == 7.6.*
+Tested-with:            GHC == 7.10.*
 Build-type:             Simple
 
 Synopsis:               Read and write Accelerate arrays in various formats
@@ -42,12 +42,11 @@ Flag internal-checks
 
 Library
   Include-Dirs:         include
-  Build-depends:        accelerate      == 2.0.*,
+  Build-depends:        accelerate,
                         array           >= 0.3,
-                        base            >= 4.6 && < 4.8,
+                        base            >= 4.6,
                         bmp             >= 1.2,
                         bytestring      >= 0.9,
-                        repa            >= 3.2,
                         vector          >= 0.9
 
   Exposed-modules:      Data.Array.Accelerate.IO
@@ -55,7 +54,6 @@ Library
                         Data.Array.Accelerate.IO.ByteString
                         Data.Array.Accelerate.IO.BMP
                         Data.Array.Accelerate.IO.Ptr
-                        Data.Array.Accelerate.IO.Repa
                         Data.Array.Accelerate.IO.Vector
 
   if flag(bounds-checks)
